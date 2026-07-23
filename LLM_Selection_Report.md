@@ -1,0 +1,188 @@
+<h2 style="color: #0055FF; font-weight: bold;">LLM(대규모언어모델) 비교·선정 보고서</h2>
+
+<br>
+
+### 1. 비교 목적
+업무 자동화 과업, 회의 녹취록 요약에 최적인 LLM모델을 선정하기 위하여 실시한다.
+
+<br>
+
+### 2. 비교에 사용한 동일 입력
+병원 척추 다학제 컨퍼런스 녹취록(약 7,000자 분량)
+* → 가상의 회의 녹취록으로, 무료 버전 ChatGPT를 사용하여 작성하였다.
+* → 입력 원문은 별첨의 **[부록] 회의 녹취록 원문.md** 파일을 참조할 것.
+
+<br>
+
+### 3. 비교 대상 모델 평가(점수표) 및 환경 기록
+
+**#평가방법론**
+* **평가점수:** 각 평가축에 대해 1점(최저)~5점(최고) 척도를 적용
+* **환산점수:** 항목별 평가점수에 가중치에 적용하여 100점 만점 기준으로 종합 평가
+* **산출식:** [항목별 환산점수 = (평가점수 ÷ 5) × 가중치] ※ 단, 가중치는 100점 기준 배점값(%)으로 적용
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; font-size: 14px;">
+  <tr style="background-color: #F2F2F2; text-align: center;">
+    <th style="padding: 5px;">평가축</th>
+    <th style="padding: 5px;">세부 평가 내용</th>
+    <th style="padding: 5px;">가중치</th>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">(1) 정확성</td>
+    <td style="padding: 5px;">원문의 주요 사실과 맥락을 왜곡 없이 정확하게 반영했는지 평가</td>
+    <td style="padding: 5px; text-align: center;">25%</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">(2) 완전성</td>
+    <td style="padding: 5px;">주요 논의, 결정사항, 후속조치 등 핵심 정보의 누락 여부 평가</td>
+    <td style="padding: 5px; text-align: center;">25%</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">(3) 구조화 능력</td>
+    <td style="padding: 5px;">명확한 구조로 정리하고 가독성이 확보되었는지 평가</td>
+    <td style="padding: 5px; text-align: center;">15%</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">(4) 지시사항 준수</td>
+    <td style="padding: 5px;">요구한 지시사항/규칙 및 기타 형식을 준수하는지 평가</td>
+    <td style="padding: 5px; text-align: center;">10%</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">(5) 객관성</td>
+    <td style="padding: 5px;">원문에 없는 내용을 추가하거나 추론하지 않았는지 평가</td>
+    <td style="padding: 5px; text-align: center;">15%</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">(6) 안정성</td>
+    <td style="padding: 5px;">오류 발생 여부, 조건 및 맥락 유지 및 일관된 결과 생성 여부 평가</td>
+    <td style="padding: 5px; text-align: center;">10%</td>
+  </tr>
+</table>
+
+<br>
+
+**#평가 점수표**
+상세 평가 내용은 **[부록] LLM별 상세 평가 결과표.md** 파일을 참조할 것.
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: center; font-size: 14px;">
+  <tr style="background-color: black; color: white;">
+    <th style="padding: 5px; width: 25%;">구분</th>
+    <th style="padding: 5px; background-color: #FFFF00; color: black; width: 25%;">Gemini 3.1 Flash Lite</th>
+    <th style="padding: 5px; background-color: #00FFFF; color: black; width: 25%;">Claude Haiku 4.5</th>
+    <th style="padding: 5px; background-color: #FF99CC; color: black; width: 25%;">GPT-5.4 mini</th>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">정확성</td>
+    <td style="padding: 5px;">20점</td>
+    <td style="padding: 5px;">15점</td>
+    <td style="padding: 5px;">20점</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">완전성</td>
+    <td style="padding: 5px;">20점</td>
+    <td style="padding: 5px;">20점</td>
+    <td style="padding: 5px;">20점</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">구조화 능력</td>
+    <td style="padding: 5px;">15점</td>
+    <td style="padding: 5px;">9점</td>
+    <td style="padding: 5px;">12점</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">지시사항 준수</td>
+    <td style="padding: 5px;">6점</td>
+    <td style="padding: 5px;">4점</td>
+    <td style="padding: 5px;">6점</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">객관성</td>
+    <td style="padding: 5px;">9점</td>
+    <td style="padding: 5px;">9점</td>
+    <td style="padding: 5px;">12점</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">안정성</td>
+    <td style="padding: 5px;">6점</td>
+    <td style="padding: 5px;">4점</td>
+    <td style="padding: 5px;">3점</td>
+  </tr>
+  <tr style="font-weight: bold;">
+    <td style="padding: 5px;">환각 검증 결과</td>
+    <td style="padding: 5px;">1.5점</td>
+    <td style="padding: 5px;">1.5점</td>
+    <td style="padding: 5px;">2.5점</td>
+  </tr>
+  <tr style="color: red; font-weight: bold;">
+    <td style="padding: 5px;">환산점수</td>
+    <td style="padding: 5px; background-color: #00FF00;">77.5점</td>
+    <td style="padding: 5px; background-color: #FFCCCC;">62.5점</td>
+    <td style="padding: 5px; background-color: #FFCC00;">75.5점</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">비용(요금제/토큰)</td>
+    <td style="padding: 5px;">유료/0.5토큰</td>
+    <td style="padding: 5px;">유료/0.5토큰</td>
+    <td style="padding: 5px;">유료/0.5토큰</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">사용 채널</td>
+    <td style="padding: 5px;">웹</td>
+    <td style="padding: 5px;">웹</td>
+    <td style="padding: 5px;">웹</td>
+  </tr>
+  <tr>
+    <td style="padding: 5px;">사용 날짜</td>
+    <td style="padding: 5px;">2026.07.10~2026.07.22</td>
+    <td style="padding: 5px;">2026.07.11~2026.07.22</td>
+    <td style="padding: 5px;">2026.07.11~2026.07.22</td>
+  </tr>
+</table>
+<div style="text-align: right; font-size: 12px; color: #555; margin-top: 5px;">
+  *비교 실험의 신뢰성 확보를 위해 비용, 사용 채널 및 평가 시점을 유사 조건으로 통제함.<br>
+  *추가 점수로 환각 검증 결과를 반영: 총 5회 검증 실시하여 PASS시 1점을 부여(5점 만점)
+</div>
+
+<br>
+
+### 4. 모델별 결과 요약
+
+#### **#Gemini 3.1 Flash Lite**
+* **요약 과업 수행**
+  * 원문의 내용과 맥락을 왜곡없이 잘 반영하였고, 추론 없이 원문에 근거한 사실만을 취급함.
+  * 또한, 불필요한 논의를 과감히 생략하면서도 핵심 대부분을 포함하여 가장 높은 압축률을 달성.
+  * 특히 **핵심 내용을 목적별로 구분하는 구조화 능력**이 우수하다 판단됨.
+  * 일부 지시사항을 준수하지 않는 부분이 있었으나, 피드백시 개선 확인
+* **환각 검증**
+  * 일부 경미한 추론을 포함하거나, 다소 리스크가 큰 유형(허위 근거 생성 등)의 환각이 발생한 점은 불안 요소이지만
+  * **반복 실행에도 끝까지 조건과 맥락을 유지하며 피드백을 반영한 수정이 가능**했기 때문에 개선의 여지가 있음.
+
+#### **#Claude Haiku 4.5**
+* **요약 과업 수행**
+  * 대체적으로 원문의 내용과 맥락을 잘 반영하고 원문에 근거한 사실을 취급했으나, 일부 정리 과정상 왜곡이 발생했고, 경미한 추론을 적용함.
+  * 타모델 대비 **핵심 내용의 범위를 넓게 선정하여 누락을 방지하는 능력(완전성)**이 우수하다 판단됨.
+  * 다만, 분류상 내용의 중복이나 중요도가 낮은 내용을 별도 섹션으로 다루는 등 구조화 능력이 부족하여 가장 낮은 압축률을 달성함.
+  * 일부 지시사항을 준수하지 않는 부분도 있었으나, 피드백시 개선됨을 확인함.
+* **환각 검증**
+  * 일부 경미한 추론을 포함하거나, 근거 누락 부재 오판의 리스크가 발견됨.
+  * **반복 실행시 끝까지 조건과 맥락을 유지하지 못하고 피드백을 반영한 수정이 불가능**했던 점도 감점 요소.
+
+#### **#GPT-5.4 mini**
+* **요약 과업 수행**
+  * 원문의 내용과 맥락을 왜곡없이 잘 반영하였고, 추론 없이 원문에 근거한 사실만을 취급함.
+  * 특히 **추론 대신 중립적인 표현을 사용하여 상위 개념으로 정리하는 능력(객관성)**이 돋보임.
+  * 핵심 대부분을 포함하면서도 양호한 압축률을 달성하였고 두괄식 구성을 선택하는 등 구조화 능력이 있으나, 내용 구분상 부자연스러운 부분도 존재.
+  * 일부 지시사항을 준수하지 않는 부분이 있었으나, 피드백시 개선됨을 확인함.
+* **환각 검증**
+  * 타모델 대비 과도한 단정을 최대한 배제하는 선택을 한다는 강점이 있으나, 일부 경미한 추론은 여전히 포함함.
+  * 거짓 전제를 그대로 수용했던 점과 대화가 길어지면 잠재된 환각이 발현되는 점 역시 아쉬움.
+  * **반복 실행시 끝까지 조건과 맥락을 유지하지 못하고 피드백을 반영한 수정이 불가능**했던 점도 감점 요소.
+
+<br>
+
+### 5. 최종 선정 결론 및 근거
+
+**#최종 선정 모델 : Gemini 3.1 Flash Lite**
+* 요약 수행에 필요한 6가지 평가 지표를 기준으로 종합 평가한 점수가 최고점(77.5점)이며, 평가 결과의 밸런스가 우수함.
+* (주요 강점인 구조화 능력, 정확성, 완전성은 가중치↑ / 상대적 약점인 객관성, 지시사항 준수, 완전성은 가중치↓)
+* 또한, 약점에 대한 개선의 여지를 가지고 있다는 점 역시 선정 근거 중 하나.
