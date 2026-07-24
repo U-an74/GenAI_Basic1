@@ -92,6 +92,9 @@
 
 ## 5. 최종 선정 결론 및 근거
 
+<img width="1536" height="1024" alt="Copilot_20260724_conclusion" src="https://github.com/user-attachments/assets/1fadc5a5-8692-4e36-a173-eb82a6ce77b2" />
+
+
 * **최종 선정 모델 : 🟡Gemini 3.1 Flash Lite🤖**
   * 요약 수행에 필요한 6가지 평가축(지표)를 기준으로 종합 평가한 점수가 **최고점(77.5점)** 으로, 평가 결과의 밸런스가 우수하다고 판단함.
 
