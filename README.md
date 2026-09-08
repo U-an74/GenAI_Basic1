@@ -3,7 +3,7 @@
 업무 자동화 프롬프트 패키지
 
 ## 📄 LLM 모델 비교/선정 보고서 
-[보고서 보기] ./LLM_Selection_Report.md
+[보고서 보기](./LLM_Selection_Report.md)
 ※평가 기준 상세 ▶ (./appendix/[부록] LLM별 상세 평가 결과표.md)
 ## 📄 시스템 설계 문서
 ## 🗨️ 실행로그
